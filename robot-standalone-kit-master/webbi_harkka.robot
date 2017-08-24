@@ -2,6 +2,7 @@
 Documentation     To test that user can navigate to wikipedia and
 ...               check that RF wiki-page exists and contains phrase mentioned in TC
 Suite Setup       Setup chromedriver
+Suite Teardown    Close All Browsers
 Library           Selenium2Library
 Library           OperatingSystem
 
@@ -16,7 +17,7 @@ Web Test
     Input Text    //*[@id="searchInput"]    Robot Framework
     Click Element    //*[@id="searchButton"]
     Page Should Contain    The Robot Framework is a generic test automation framework
-    Close All Browsers
+    #Close All Browsers
 
 *** Keywords ***
 Setup chromedriver
