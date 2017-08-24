@@ -5,6 +5,7 @@ Suite Setup       Setup chromedriver
 Suite Teardown    Close All Browsers
 Library           Selenium2Library    #Suite Teardown    Close All Browsers
 Library           OperatingSystem
+Library           Screenshot    screenshot_directory=c:\\temp
 
 *** Variables ***
 ${CDRIVER}        C:\\koodit\\chromedriver\\chromedriver.exe
@@ -15,6 +16,7 @@ ${URL}            https://en.wikipedia.org/wiki/New_York_(state)
 Web Test
     #Setup chromedriver
     Open Browser    ${URL}    ${BROWSER}
+    Take Screenshot    pic.jpg 80%
     ${population1910}=    Get NY Population    1910
     Should Be Equal    ${population1910}    9,113,614
 
