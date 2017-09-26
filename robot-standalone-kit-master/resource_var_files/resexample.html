@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Screenshot    screenshot_directory=c:\\temp
+
+*** Variables ***
+${CDRIVER}        C:\\koodit\\chromedriver\\chromedriver.exe
+${BROWSER}        chrome
+${URL}            https://en.wikipedia.org/wiki/New_York_(state)
+
+*** Keywords ***
+Get NY Population
+    [Arguments]    ${arg1}
+    Page Should Contain    ${arg1}
+    ${ARVO}=    Get Text    css=table.toccolours > tbody > tr:nth-child(15) > td:nth-child(2)
+    Log    ${ARVO}
+    [Return]    ${ARVO}
