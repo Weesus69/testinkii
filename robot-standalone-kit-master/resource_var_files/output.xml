@@ -1,120 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170926 15:05:32.222" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
-<suite id="s1" name="Resourcefilexample &amp; Varexample">
-<suite source="C:\koodit\testinkii\robot-standalone-kit-master\resource_var_files\resourcefilexample.robot" id="s1-s1" name="Resourcefilexample">
+<robot generated="20170928 14:25:41.126" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\koodit\testinkii\robot-standalone-kit-master\resource_var_files\varexample.robot" id="s1" name="Varexample">
 <kw type="setup" name="Setup chromedriver">
+<msg timestamp="20170928 14:25:41.374" level="TRACE">Arguments: [  ]</msg>
 <kw name="Set Environment Variable" library="OperatingSystem">
 <doc>Sets an environment variable to a specified value.</doc>
 <arguments>
 <arg>webdriver.chrome.driver</arg>
 <arg>${CDRIVER}</arg>
 </arguments>
-<msg timestamp="20170926 15:05:32.470" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:\koodit\chromedriver\chromedriver.exe'.</msg>
-<status status="PASS" endtime="20170926 15:05:32.470" starttime="20170926 15:05:32.470"></status>
+<msg timestamp="20170928 14:25:41.374" level="TRACE">Arguments: [ 'webdriver.chrome.driver' | b'C:\\koodit\\chromedriver\\chromedriver.exe' ]</msg>
+<msg timestamp="20170928 14:25:41.374" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:\koodit\chromedriver\chromedriver.exe'.</msg>
+<msg timestamp="20170928 14:25:41.374" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:41.375" starttime="20170928 14:25:41.374"></status>
 </kw>
-<status status="PASS" endtime="20170926 15:05:32.470" starttime="20170926 15:05:32.469"></status>
+<msg timestamp="20170928 14:25:41.375" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:41.375" starttime="20170928 14:25:41.374"></status>
 </kw>
-<test id="s1-s1-t1" name="Web Test">
+<test id="s1-t1" name="Web test2">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170926 15:05:32.472" level="INFO">Opening browser 'chrome' to base url 'https://en.wikipedia.org/wiki/New_York_(state)'</msg>
-<status status="PASS" endtime="20170926 15:05:41.713" starttime="20170926 15:05:32.471"></status>
-</kw>
-<kw name="Take Screenshot" library="Screenshot">
-<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
-<arguments>
-<arg>pic.jpg 80%</arg>
-</arguments>
-<msg timestamp="20170926 15:05:41.798" html="yes" level="INFO">&lt;a href="file:///C:/temp/pic.jpg%2080%25_19.jpg"&gt;&lt;img src="file:///C:/temp/pic.jpg%2080%25_19.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170926 15:05:41.798" starttime="20170926 15:05:41.713"></status>
-</kw>
-<kw name="Get NY Population" library="resexample">
-<arguments>
-<arg>1910</arg>
-</arguments>
-<assign>
-<var>${population1910}</var>
-</assign>
-<kw name="Page Should Contain" library="Selenium2Library">
-<doc>Verifies that current page contains `text`.</doc>
-<arguments>
-<arg>${arg1}</arg>
-</arguments>
-<msg timestamp="20170926 15:05:42.155" level="INFO">Current page contains text '1910'.</msg>
-<status status="PASS" endtime="20170926 15:05:42.156" starttime="20170926 15:05:41.799"></status>
-</kw>
-<kw name="Get Text" library="Selenium2Library">
-<doc>Returns the text value of element identified by `locator`.</doc>
-<arguments>
-<arg>css=table.toccolours &gt; tbody &gt; tr:nth-child(15) &gt; td:nth-child(2)</arg>
-</arguments>
-<assign>
-<var>${ARVO}</var>
-</assign>
-<msg timestamp="20170926 15:05:42.583" level="INFO">${ARVO} = 9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:42.583" starttime="20170926 15:05:42.156"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${ARVO}</arg>
-</arguments>
-<msg timestamp="20170926 15:05:42.584" level="INFO">9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:42.585" starttime="20170926 15:05:42.584"></status>
-</kw>
-<msg timestamp="20170926 15:05:42.585" level="INFO">${population1910} = 9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:42.586" starttime="20170926 15:05:41.799"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>${population1910}</arg>
-<arg>9,113,614</arg>
-</arguments>
-<status status="PASS" endtime="20170926 15:05:42.589" starttime="20170926 15:05:42.587"></status>
-</kw>
-<status status="PASS" endtime="20170926 15:05:42.590" critical="yes" starttime="20170926 15:05:32.470"></status>
-</test>
-<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20170926 15:05:46.590" starttime="20170926 15:05:42.597"></status>
-</kw>
-<status status="PASS" endtime="20170926 15:05:46.590" starttime="20170926 15:05:32.250"></status>
-</suite>
-<suite source="C:\koodit\testinkii\robot-standalone-kit-master\resource_var_files\varexample.robot" id="s1-s2" name="Varexample">
-<kw type="setup" name="Setup chromedriver">
-<kw name="Set Environment Variable" library="OperatingSystem">
-<doc>Sets an environment variable to a specified value.</doc>
-<arguments>
-<arg>webdriver.chrome.driver</arg>
-<arg>${CDRIVER}</arg>
-</arguments>
-<msg timestamp="20170926 15:05:46.618" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:\koodit\chromedriver\chromedriver.exe'.</msg>
-<status status="PASS" endtime="20170926 15:05:46.619" starttime="20170926 15:05:46.617"></status>
-</kw>
-<status status="PASS" endtime="20170926 15:05:46.619" starttime="20170926 15:05:46.616"></status>
-</kw>
-<test id="s1-s2-t1" name="Web Test">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20170926 15:05:46.622" level="INFO">Opening browser 'chrome' to base url 'https://en.wikipedia.org/wiki/New_York_(state)'</msg>
-<status status="PASS" endtime="20170926 15:05:54.890" starttime="20170926 15:05:46.620"></status>
-</kw>
-<kw name="Take Screenshot" library="Screenshot">
-<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
-<arguments>
-<arg>pic.jpg 80%</arg>
-</arguments>
-<msg timestamp="20170926 15:05:54.965" html="yes" level="INFO">&lt;a href="file:///C:/temp/pic.jpg%2080%25_20.jpg"&gt;&lt;img src="file:///C:/temp/pic.jpg%2080%25_20.jpg" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170926 15:05:54.965" starttime="20170926 15:05:54.890"></status>
+<msg timestamp="20170928 14:25:41.376" level="TRACE">Arguments: [ b'https://en.wikipedia.org/wiki/New_York_(state)' | b'chrome' ]</msg>
+<msg timestamp="20170928 14:25:41.376" level="INFO">Opening browser 'chrome' to base url 'https://en.wikipedia.org/wiki/New_York_(state)'</msg>
+<msg timestamp="20170928 14:25:43.386" level="DEBUG">POST http://127.0.0.1:50095/session {"capabilities": {"alwaysMatch": {"browserName": "chrome"}, "firstMatch": [{}]}, "desiredCapabilities": {"platform": "ANY", "browserName": "chrome", "version": "", "chromeOptions": {"args": [], "extensions": []}}}</msg>
+<msg timestamp="20170928 14:25:46.317" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:46.318" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/timeouts/async_script {"sessionId": "710c8bba69a60a713bc200f247699999", "ms": 5000.0}</msg>
+<msg timestamp="20170928 14:25:46.804" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:46.805" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/timeouts/implicit_wait {"sessionId": "710c8bba69a60a713bc200f247699999", "ms": 0.0}</msg>
+<msg timestamp="20170928 14:25:47.292" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:47.293" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/url {"url": "https://en.wikipedia.org/wiki/New_York_(state)", "sessionId": "710c8bba69a60a713bc200f247699999"}</msg>
+<msg timestamp="20170928 14:25:51.709" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:51.709" level="DEBUG">Opened browser with session id 710c8bba69a60a713bc200f247699999</msg>
+<msg timestamp="20170928 14:25:51.709" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20170928 14:25:51.709" starttime="20170928 14:25:41.376"></status>
 </kw>
 <kw name="Get NY Population">
 <arguments>
@@ -123,13 +45,20 @@
 <assign>
 <var>${population1910}</var>
 </assign>
+<msg timestamp="20170928 14:25:51.710" level="TRACE">Arguments: [ ${arg1}='1910' ]</msg>
 <kw name="Page Should Contain" library="Selenium2Library">
 <doc>Verifies that current page contains `text`.</doc>
 <arguments>
 <arg>${arg1}</arg>
 </arguments>
-<msg timestamp="20170926 15:05:55.372" level="INFO">Current page contains text '1910'.</msg>
-<status status="PASS" endtime="20170926 15:05:55.373" starttime="20170926 15:05:54.967"></status>
+<msg timestamp="20170928 14:25:51.711" level="TRACE">Arguments: [ '1910' ]</msg>
+<msg timestamp="20170928 14:25:51.712" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/frame {"sessionId": "710c8bba69a60a713bc200f247699999", "id": null}</msg>
+<msg timestamp="20170928 14:25:52.207" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:52.208" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/elements {"using": "xpath", "sessionId": "710c8bba69a60a713bc200f247699999", "value": "//*[contains(., '1910')]"}</msg>
+<msg timestamp="20170928 14:25:52.702" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:52.702" level="INFO">Current page contains text '1910'.</msg>
+<msg timestamp="20170928 14:25:52.702" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:52.703" starttime="20170928 14:25:51.711"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -139,19 +68,28 @@
 <assign>
 <var>${ARVO}</var>
 </assign>
-<msg timestamp="20170926 15:05:55.727" level="INFO">${ARVO} = 9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:55.727" starttime="20170926 15:05:55.373"></status>
+<msg timestamp="20170928 14:25:52.704" level="TRACE">Arguments: [ 'css=table.toccolours &gt; tbody &gt; tr:nth-child(15) &gt; td:nth-child(2)' ]</msg>
+<msg timestamp="20170928 14:25:52.705" level="DEBUG">POST http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/elements {"using": "css selector", "sessionId": "710c8bba69a60a713bc200f247699999", "value": "table.toccolours &gt; tbody &gt; tr:nth-child(15) &gt; td:nth-child(2)"}</msg>
+<msg timestamp="20170928 14:25:53.205" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:53.206" level="DEBUG">GET http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999/element/0.6655271812433019-16/text {"sessionId": "710c8bba69a60a713bc200f247699999", "id": "0.6655271812433019-16"}</msg>
+<msg timestamp="20170928 14:25:53.695" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:53.696" level="TRACE">Return: '9,113,614'</msg>
+<msg timestamp="20170928 14:25:53.696" level="INFO">${ARVO} = 9,113,614</msg>
+<status status="PASS" endtime="20170928 14:25:53.696" starttime="20170928 14:25:52.703"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${ARVO}</arg>
 </arguments>
-<msg timestamp="20170926 15:05:55.728" level="INFO">9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:55.729" starttime="20170926 15:05:55.728"></status>
+<msg timestamp="20170928 14:25:53.698" level="TRACE">Arguments: [ '9,113,614' ]</msg>
+<msg timestamp="20170928 14:25:53.698" level="INFO">9,113,614</msg>
+<msg timestamp="20170928 14:25:53.698" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:53.698" starttime="20170928 14:25:53.697"></status>
 </kw>
-<msg timestamp="20170926 15:05:55.729" level="INFO">${population1910} = 9,113,614</msg>
-<status status="PASS" endtime="20170926 15:05:55.729" starttime="20170926 15:05:54.966"></status>
+<msg timestamp="20170928 14:25:53.699" level="TRACE">Return: '9,113,614'</msg>
+<msg timestamp="20170928 14:25:53.699" level="INFO">${population1910} = 9,113,614</msg>
+<status status="PASS" endtime="20170928 14:25:53.699" starttime="20170928 14:25:51.710"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -159,31 +97,41 @@
 <arg>${population1910}</arg>
 <arg>9,113,614</arg>
 </arguments>
-<status status="PASS" endtime="20170926 15:05:55.732" starttime="20170926 15:05:55.731"></status>
+<msg timestamp="20170928 14:25:53.702" level="TRACE">Arguments: [ '9,113,614' | '9,113,614' ]</msg>
+<msg timestamp="20170928 14:25:53.702" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20170928 14:25:53.702" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:53.703" starttime="20170928 14:25:53.701"></status>
 </kw>
-<status status="PASS" endtime="20170926 15:05:55.733" critical="yes" starttime="20170926 15:05:46.619"></status>
+<tags>
+<tag>kalija</tag>
+</tags>
+<status status="PASS" endtime="20170928 14:25:53.704" critical="yes" starttime="20170928 14:25:41.375"></status>
 </test>
 <kw type="teardown" name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20170926 15:05:59.202" starttime="20170926 15:05:55.740"></status>
+<msg timestamp="20170928 14:25:53.712" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20170928 14:25:53.712" level="DEBUG">Closing all browsers</msg>
+<msg timestamp="20170928 14:25:53.713" level="DEBUG">DELETE http://127.0.0.1:50095/session/710c8bba69a60a713bc200f247699999 {"sessionId": "710c8bba69a60a713bc200f247699999"}</msg>
+<msg timestamp="20170928 14:25:54.214" level="DEBUG">Finished Request</msg>
+<msg timestamp="20170928 14:25:57.704" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20170928 14:25:57.705" starttime="20170928 14:25:53.711"></status>
 </kw>
 <doc>To test that user can navigate to wikipedia and
 check that RF wiki-page exists and contains phrase mentioned in TC</doc>
-<status status="PASS" endtime="20170926 15:05:59.202" starttime="20170926 15:05:46.600"></status>
-</suite>
-<status status="PASS" endtime="20170926 15:05:59.211" starttime="20170926 15:05:32.228"></status>
+<status status="PASS" endtime="20170928 14:25:57.706" starttime="20170928 14:25:41.129"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="2">Critical Tests</stat>
-<stat fail="0" pass="2">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">kalija</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Resourcefilexample &amp; Varexample" pass="2">Resourcefilexample &amp; Varexample</stat>
-<stat fail="0" id="s1-s1" name="Resourcefilexample" pass="1">Resourcefilexample &amp; Varexample.Resourcefilexample</stat>
-<stat fail="0" id="s1-s2" name="Varexample" pass="1">Resourcefilexample &amp; Varexample.Varexample</stat>
+<stat fail="0" id="s1" name="Varexample" pass="1">Varexample</stat>
 </suite>
 </statistics>
 <errors>
