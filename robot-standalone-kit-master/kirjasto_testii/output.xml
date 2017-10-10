@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171010 11:21:09.022" generator="Robot 3.0.2 (Python 2.7.10 on win32)">
+<suite source="C:\koodit\testinkii\robot-standalone-kit-master\kirjasto_testii\Testii.robot" id="s1" name="Testii">
+<kw type="setup" name="Setup chromedriver">
+<kw name="Set Environment Variable" library="OperatingSystem">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>webdriver.chrome.driver</arg>
+<arg>${CDRIVER}</arg>
+</arguments>
+<msg timestamp="20171010 11:21:09.228" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:\koodit\chromedriver\chromedriver.exe'.</msg>
+<status status="PASS" endtime="20171010 11:21:09.228" starttime="20171010 11:21:09.228"></status>
+</kw>
+<status status="PASS" endtime="20171010 11:21:09.228" starttime="20171010 11:21:09.227"></status>
+</kw>
+<test id="s1-t1" name="Web Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20171010 11:21:09.229" level="INFO">Opening browser 'chrome' to base url 'https://en.wikipedia.org/wiki/New_York_(state)'</msg>
+<status status="PASS" endtime="20171010 11:21:19.353" starttime="20171010 11:21:09.229"></status>
+</kw>
+<kw name="Get NY Population">
+<arguments>
+<arg>1910</arg>
+</arguments>
+<assign>
+<var>${population1910}</var>
+</assign>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${arg1}</arg>
+</arguments>
+<msg timestamp="20171010 11:21:20.449" level="INFO">Current page contains text '1910'.</msg>
+<status status="PASS" endtime="20171010 11:21:20.450" starttime="20171010 11:21:19.355"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>css=table.toccolours &gt; tbody &gt; tr:nth-child(15) &gt; td:nth-child(2)</arg>
+</arguments>
+<assign>
+<var>${ARVO}</var>
+</assign>
+<msg timestamp="20171010 11:21:21.490" level="INFO">${ARVO} = 9,113,614</msg>
+<status status="PASS" endtime="20171010 11:21:21.490" starttime="20171010 11:21:20.450"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ARVO}</arg>
+</arguments>
+<msg timestamp="20171010 11:21:21.491" level="INFO">9,113,614</msg>
+<status status="PASS" endtime="20171010 11:21:21.491" starttime="20171010 11:21:21.490"></status>
+</kw>
+<msg timestamp="20171010 11:21:21.492" level="INFO">${population1910} = 9,113,614</msg>
+<status status="PASS" endtime="20171010 11:21:21.492" starttime="20171010 11:21:19.354"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${population1910}</arg>
+<arg>9,113,614</arg>
+</arguments>
+<status status="PASS" endtime="20171010 11:21:21.496" starttime="20171010 11:21:21.495"></status>
+</kw>
+<status status="PASS" endtime="20171010 11:21:21.496" critical="yes" starttime="20171010 11:21:09.228"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20171010 11:21:25.478" starttime="20171010 11:21:21.502"></status>
+</kw>
+<doc>To test that user can navigate to wikipedia and
+check that RF wiki-page exists and contains phrase mentioned in TC</doc>
+<status status="PASS" endtime="20171010 11:21:25.478" starttime="20171010 11:21:09.024"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testii" pass="1">Testii</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
