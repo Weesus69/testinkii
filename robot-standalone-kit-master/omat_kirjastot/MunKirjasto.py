@@ -12,6 +12,12 @@ rokkaa'''
 from robot.api.deco import keyword
 
 __version__ = '0.1'
+
+#Tällä voidaan määritellä mitkä metodit on oikeesti keywordeja
+# 
+# __all__=['terve', 'hello']
+# eli tässä tapauksessa vain 'terve' ja 'hello' otettaisiin messiin
+
     
 def keyword():
     pass
@@ -25,6 +31,24 @@ def hello(name):
 '''seuraava metodi ei ole keyword koska se alkaa alaviivalla'''
 def _taaEioleKeyword():
     pass
+
+#vakioille voidaan antaa myös näppärästi default arvoja, kas näin
+def joiku(vak1, joiku='Eiss'):
+    print joiku
+    vak1 = 2
+    
+#seuraava metodi ottaa mielivaltaisen määrän parametreja
+def mieli(*args):
+    for arg in args:
+        print arg
+
+#seuraava metodi palauttaa arvon RFn käytettäväksi
+def palauta_arvo():
+    return "tama arvo on palautettu"
+
+
+
+
     
 #Kustomoitu keyword, joka ei vittu jostaki syystä toimi. Tai varmaankin vaatii luokkamäärittelyn, Hohhoijaa..
 '''@keyword()

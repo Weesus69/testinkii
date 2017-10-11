@@ -16,5 +16,10 @@ Testi yksi
     hello    pertti
     shaibaa
     Tassapa Sulle Uus keywordi
+    joiku    eka
+    joiku    toka    tämäkorvaadefaultfraasin
+    mieli    eka    toka    koka    neka
+    ${TEKSTI}    palauta_arvo
+    log    ${TEKSTI}
 
 *** Keywords ***
