@@ -33,12 +33,7 @@ Closing pop-up window
     dismiss alert
     sleep  5 seconds
 
-    TÄHÄ JÄÄTIIN:
-    https://www.guru99.com/first-webdriver-script.html
-There are two kinds of waits.
 
-Implicit wait - used to set the default waiting time throughout the program
-Explicit wait - used to set the waiting time for a particular instance only
 
 
 
