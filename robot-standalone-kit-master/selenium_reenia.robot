@@ -33,8 +33,31 @@ Closing pop-up window
     dismiss alert
     sleep  5 seconds
 
+Accepting alert message
+    go to   http://demo.guru99.com/selenium/delete_customer.php
+    input text    name=cusid    53920
+    click button    name=submit
+    dismiss alert   accept=True
+    sleep  5 seconds
 
+Handling pop-up window
+    go to       http://demo.guru99.com/popup.php
+    click link      partial link=Click
+    select window       url=http://demo.guru99.com/articles_popup.php
+    input text      name=emailid     gaurav.3n@gmail.com
+    submit form
+    sleep   2
+    close window
+    sleep   2
 
+Getting length of table rows and columns
+    go to       http://money.rediff.com/gainers/bsc/dailygroupa?
+    @{COLUMNS}      get webelements     xpath=.//*[@id=\"leftcontainer\"]/table/thead/tr/th
+    @{ROWS}         get webelements     xpath=.//*[@id=\"leftcontainer\"]/table/tbody/tr/td[1]
+    ${RIVIT}        get length      ${ROWS}
+    ${SARAKKEET}        get length      ${COLUMNS}
+    log to console      rivien lukumäärä=${RIVIT}
+    log to console      Sarakkeiden lukumäärä=${SARAKKEET}
 
 
 *** Keywords ***
